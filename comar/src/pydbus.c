@@ -102,7 +102,7 @@ pydbus_export(DBusMessageIter *iter, PyObject *obj, char *signature)
     for (i = 0; i < PyTuple_Size(obj); i++) {
         PyObject *py_sign = PyList_GetItem(py_list, i);
         PyObject *py_item = PyTuple_GetItem(obj, i);
-        if (pydbus_export_item(iter, py_item, PyUnicode_AsUTF8(py_sign)) != 0) {
+        if (pydbus_export_item(iter, py_item, (const char *)PyUnicode_AsUTF8(py_sign)) != 0) {
             return -1;
         }
     }
