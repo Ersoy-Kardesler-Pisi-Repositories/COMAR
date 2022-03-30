@@ -112,7 +112,7 @@ pydbus_export(DBusMessageIter *iter, PyObject *obj, char *signature)
 
 //! Appends a Python object to a DBus message iterator
 int
-pydbus_export_item(DBusMessageIter *iter, PyObject *obj, char *signature)
+pydbus_export_item(DBusMessageIter *iter, PyObject *obj, const char *signature)
 {
     /*!
      * Appends a Python object to a DBus message iterator

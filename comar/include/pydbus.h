@@ -35,7 +35,7 @@
 
 char *get_obj_sign(PyObject *obj);
 
-int pydbus_export_item(DBusMessageIter *iter, PyObject *obj, char *signature);
+int pydbus_export_item(DBusMessageIter *iter, PyObject *obj, const char *signature);
 int pydbus_export(DBusMessageIter *iter, PyObject *obj, char *signature);
 
 PyObject *py_get_item(DBusMessageIter* iter);
