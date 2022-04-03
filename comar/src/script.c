@@ -121,7 +121,7 @@ script_signature(const char *model, const char *member, int direction)
         py_str = PyUnicode_Concat(py_str, PyList_GetItem(py_list, i));
     }
 
-    return (const char *)PyUnicode_AsUTF8(py_str);
+    return (char *)PyUnicode_AsUTF8(py_str);
 }
 
 //! Splits signature into atomic DBus object signatures
@@ -179,10 +179,10 @@ py_catch(char **eStr, char **vStr, int log)
         return;
     }
 
-    *eStr = (const char *)PyUnicode_AsUTF8(PyObject_GetAttrString(py_type, "__name__"));
+    *eStr = (char *)PyUnicode_AsUTF8(PyObject_GetAttrString(py_type, "__name__"));
 
     if (py_value) {
-        *vStr = (const char *) PyUnicode_AsUTF8(PyObject_Str(py_value));
+        *vStr = (char *) PyUnicode_AsUTF8(PyObject_Str(py_value));
     }
 
     if (log == 0) {
